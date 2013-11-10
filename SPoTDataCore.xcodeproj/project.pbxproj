@@ -114,8 +114,6 @@
 		9C668ABD182FADF600A00BA4 /* SPoTDataCore */ = {
 			isa = PBXGroup;
 			children = (
-				9C668AC6182FADF600A00BA4 /* SPoTAppDelegate.h */,
-				9C668AC7182FADF600A00BA4 /* SPoTAppDelegate.m */,
 				9C668AC9182FADF600A00BA4 /* Main_iPhone.storyboard */,
 				9C668ACC182FADF600A00BA4 /* Main_iPad.storyboard */,
 				9C668ACF182FADF600A00BA4 /* SPoTViewController.h */,
@@ -129,6 +127,8 @@
 		9C668ABE182FADF600A00BA4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9C668AC6182FADF600A00BA4 /* SPoTAppDelegate.h */,
+				9C668AC7182FADF600A00BA4 /* SPoTAppDelegate.m */,
 				9C668ABF182FADF600A00BA4 /* SPoTDataCore-Info.plist */,
 				9C668AC0182FADF600A00BA4 /* InfoPlist.strings */,
 				9C668AC3182FADF600A00BA4 /* main.m */,
