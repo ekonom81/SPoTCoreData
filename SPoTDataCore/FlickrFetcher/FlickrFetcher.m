@@ -35,7 +35,7 @@
 
 + (NSArray *)stanfordPhotos
 {
-    //[NSThread sleepForTimeInterval:5.0];
+    [NSThread sleepForTimeInterval:5.0];
     NSString *request = @"http://api.flickr.com/services/rest/?user_id=48247111@N07&format=json&nojsoncallback=1&extras=original_format,tags,description,geo,date_upload,owner_name&page=1&method=flickr.photos.search";
     return [[self executeFlickrFetch:request] valueForKeyPath:@"photos.photo"];
 }

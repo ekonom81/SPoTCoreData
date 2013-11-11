@@ -38,6 +38,7 @@
         photo.title = [photoDictionary[FLICKR_PHOTO_TITLE] description];
         photo.subtitle = [[photoDictionary valueForKeyPath:FLICKR_PHOTO_DESCRIPTION] description];
         photo.imageUrl = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatLarge] absoluteString];
+        photo.thumbnailUrl = [[FlickrFetcher urlForPhoto:photoDictionary format:FlickrPhotoFormatSquare] absoluteString];
        
         NSString* photoTags =[photoDictionary[FLICKR_TAGS]description];
         NSArray* tagArray=[photoTags componentsSeparatedByString:@" "];
@@ -46,7 +47,9 @@
             NSString* tag = [tagArray objectAtIndex:tagRow];
             if(![tag isEqualToString:@"cs193pspot"] && ![tag isEqualToString:@"portrait"] && ![tag isEqualToString:@"landscape"])
             {
-                [photo addTagsObject:[Tag tagWithName:tag inManagedObjectContext:context]];
+                Tag *tagObject=[Tag tagWithName:tag inManagedObjectContext:context];
+                [photo addTagsObject:tagObject];
+                [tagObject addPhotosObject:photo];
             }
         }
     } else { // found the Photo, just return it from the list of matches (which there will only be one of)

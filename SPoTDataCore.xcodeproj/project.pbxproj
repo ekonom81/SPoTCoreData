@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9C05533F18314FAE00F493EB /* PhotosByTagCDTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9C05533E18314FAE00F493EB /* PhotosByTagCDTVC.m */; };
 		9C668AB8182FADF600A00BA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C668AB7182FADF600A00BA4 /* Foundation.framework */; };
 		9C668ABA182FADF600A00BA4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C668AB9182FADF600A00BA4 /* CoreGraphics.framework */; };
 		9C668ABC182FADF600A00BA4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C668ABB182FADF600A00BA4 /* UIKit.framework */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9C05533D18314FAE00F493EB /* PhotosByTagCDTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosByTagCDTVC.h; sourceTree = "<group>"; };
+		9C05533E18314FAE00F493EB /* PhotosByTagCDTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosByTagCDTVC.m; sourceTree = "<group>"; };
 		9C668AB4182FADF600A00BA4 /* SPoTDataCore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SPoTDataCore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C668AB7182FADF600A00BA4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9C668AB9182FADF600A00BA4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -152,6 +155,8 @@
 				9C668B33182FDFD000A00BA4 /* Model */,
 				9C668AF6182FD1B000A00BA4 /* FlickrFetcher */,
 				9C668AC9182FADF600A00BA4 /* Main_iPhone.storyboard */,
+				9C05533D18314FAE00F493EB /* PhotosByTagCDTVC.h */,
+				9C05533E18314FAE00F493EB /* PhotosByTagCDTVC.m */,
 				9C668AEF182FBCFD00A00BA4 /* SpotDataModel.xcdatamodeld */,
 				9C668ACC182FADF600A00BA4 /* Main_iPad.storyboard */,
 				9CF2FB9718300FFD006FE972 /* UIApplication+NetworkActivity.h */,
@@ -333,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C668B3F182FE02000A00BA4 /* Photo.m in Sources */,
+				9C05533F18314FAE00F493EB /* PhotosByTagCDTVC.m in Sources */,
 				9CF2FBA618301E78006FE972 /* Tag+Create.m in Sources */,
 				9CF2FB9918300FFD006FE972 /* UIApplication+NetworkActivity.m in Sources */,
 				9C668B3C182FE02000A00BA4 /* Tag.m in Sources */,
