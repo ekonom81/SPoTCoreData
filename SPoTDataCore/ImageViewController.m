@@ -48,6 +48,8 @@
             [[UIApplication sharedApplication] hideNetworkActivityIndicator];
             UIImage *image = [[UIImage alloc]initWithData:imageData];
             
+            
+            
             if(self.imageURL==imageURL){
                 dispatch_async(dispatch_get_main_queue(), ^{
                     if(image){

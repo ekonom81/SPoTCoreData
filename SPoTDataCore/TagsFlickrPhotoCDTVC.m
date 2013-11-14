@@ -11,12 +11,14 @@
 #import "Photo+Flickr.h"
 #import "FlickrFetcher.h"
 #import "UIApplication+NetworkActivity.h"
+#import "SharedUIManagmentDocument.h"
 
 @implementation TagsFlickrPhotoCDTVC
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self openDataBase];
     [self.refreshControl addTarget:self
                             action:@selector(refresh)
                   forControlEvents:UIControlEventValueChanged];
@@ -24,11 +26,6 @@
 
 // Whenever the table is about to appear, if we have not yet opened/created or demo document, do so.
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    if (!self.managedObjectContext) [self useDemoDocument];
-}
 #pragma mark - Properties
 
 // The Model for this class.
@@ -49,29 +46,15 @@
     }
 }
 
-- (void)useDemoDocument
+- (void)openDataBase
 {
-    NSURL *url = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    url = [url URLByAppendingPathComponent:@"Demo Document"];
-    UIManagedDocument *document = [[UIManagedDocument alloc] initWithFileURL:url];
-    
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[url path]]) {
-        [document saveToURL:url
-           forSaveOperation:UIDocumentSaveForCreating
-          completionHandler:^(BOOL success) {
-              if (success) {
-                  self.managedObjectContext = document.managedObjectContext;
-                  [self refresh];
-              }
-          }];
-    } else if (document.documentState == UIDocumentStateClosed) {
-        [document openWithCompletionHandler:^(BOOL success) {
-            if (success) {
-                self.managedObjectContext = document.managedObjectContext;
-            }
+    if(!self.managedObjectContext) {
+        [[SharedUIManagmentDocument sharedDocument] performWithDocument:^(UIManagedDocument *document) {
+            self.managedObjectContext = document.managedObjectContext;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self refresh];
+            });
         }];
-    } else {
-        self.managedObjectContext = document.managedObjectContext;
     }
 }
 

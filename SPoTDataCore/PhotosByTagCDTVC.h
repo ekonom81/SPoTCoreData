@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 CS193p. All rights reserved.
 //
 
-#import "CoreDataTableViewController.h"
+#import "PhotosTitleCDTVC.h"
 #import "Tag.h"
 
-@interface PhotosByTagCDTVC : CoreDataTableViewController
+@interface PhotosByTagCDTVC : PhotosTitleCDTVC
     @property (nonatomic, strong) Tag *tag;
 @end

@@ -20,10 +20,10 @@
             </objects>
             <point key="canvasLocation" x="605" y="-188"/>
         </scene>
-        <!--Tags Flickr PhotoCDTVC - Recents-->
+        <!--Recent PhotosCDTVC - Recents-->
         <scene sceneID="DY8-Ka-vKl">
             <objects>
-                <viewController id="fG8-Y5-fIC" customClass="TagsFlickrPhotoCDTVC" sceneMemberID="viewController">
+                <viewController id="fG8-Y5-fIC" customClass="RecentPhotosCDTVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="200" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RKr-6m-D76">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,7 +51,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mUS-B6-r3g" kind="push" identifier="Show Image" id="dBi-A1-xR8"/>
+                                    <segue destination="mUS-B6-r3g" kind="push" identifier="setImageURL:" id="dBi-A1-xR8"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -106,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wze-ry-sTq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1534" y="-219"/>
+            <point key="canvasLocation" x="1534" y="-210"/>
         </scene>
         <!--Navigation Controller - Features-->
         <scene sceneID="bu3-uv-AhA">
@@ -245,6 +245,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rQ9-IL-std"/>
+        <segue reference="dBi-A1-xR8"/>
     </inferredMetricsTieBreakers>
 </document>
